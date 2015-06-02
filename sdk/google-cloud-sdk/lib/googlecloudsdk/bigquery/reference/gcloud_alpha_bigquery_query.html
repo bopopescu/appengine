@@ -1,0 +1,252 @@
+<html devsite="">
+<head>
+<title>gcloud alpha bigquery query</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="project_path" value="/sdk/_project.yaml">
+<meta name="book_path" value="/sdk/_book.yaml">
+<!--
+        THIS DOC IS GENERATED.  DO NOT EDIT.
+        -->
+<style>
+  dd { margin-bottom: 1ex; }
+  .hangingindent { padding-left: 1.5em; text-indent: -1.5em; }
+</style>
+</head>
+<body><dl>
+<section>
+<dt>NAME</dt>
+<dd>gcloud alpha bigquery query - <code>(ALPHA)</code> Executes an SQL query</dd>
+</section><section>
+<dt>SYNOPSIS</dt>
+<dd><pre>gcloud alpha bigquery query SQL_QUERY [--allow-large-results] [--append-to APPEND_TO | --write-to WRITE_TO] [--async] [--batch] [--dry-run] [--fingerprint-job-id] [--format FORMAT] [--help] [--job-id JOB_ID] [--limit LIMIT; default="100"] [--log-http] [--project PROJECT_ID] [--quiet, -q] [--require-cache] [--start-row START_ROW] [--status STATUS; default="periodic"] [--structured] [--trace-token TRACE_TOKEN] [--use-cache] [-h]</pre></dd>
+</section><section>
+<dt>DESCRIPTION</dt>
+<dd>
+<code>(ALPHA)</code> A table or view reference in the query has the form
+    dataset_name/table_or_view_name
+(for a dataset in the current project) or
+    /project_name/dataset_name/table_or_view_name</dd>
+</section><section>
+<dt>POSITIONAL ARGUMENTS</dt>
+<dd><dl>
+<dt class="hangingindent">
+<code><var>SQL_QUERY</var></code>
+</dt>
+
+<dd>
+an SQL SELECT statement (typically in the form of a quoted string)
+</dd>
+
+</dl></dd>
+</section><section>
+<dt>FLAGS</dt>
+<dd><dl>
+<dt>
+<code>--allow-large-results</code>
+</dt>
+
+<dd>
+Enable larger --append-to or --write-to table sizes.
+</dd>
+
+
+<dt>
+<code>--append-to</code> <code><var>APPEND_TO</var></code>
+</dt>
+
+<dd>
+Name of a table to which query results will be appended.
+</dd>
+
+
+<dt>
+<code>--async</code>
+</dt>
+
+<dd>
+Create an asynchronous job to perform the query.
+</dd>
+
+
+<dt>
+<code>--batch</code>
+</dt>
+
+<dd>
+Run the query in batch mode.
+</dd>
+
+
+<dt>
+<code>--dry-run</code>
+</dt>
+
+<dd>
+Validate the query, but do not execute it.
+</dd>
+
+
+<dt>
+<code>--job-id</code> <code><var>JOB_ID</var></code>
+</dt>
+
+<dd>
+A unique job ID to use for the request.
+</dd>
+
+
+<dt>
+<code>--limit</code> <code><var>LIMIT</var></code>; default="100"
+</dt>
+
+<dd>
+How many rows to return in the result.
+</dd>
+
+
+<dt>
+<code>--require-cache</code>
+</dt>
+
+<dd>
+Run the query only if it is already cached.
+</dd>
+
+
+<dt>
+<code>--start-row</code> <code><var>START_ROW</var></code>
+</dt>
+
+<dd>
+First row to return in the result.
+</dd>
+
+
+<dt>
+<code>--status</code> <code><var>STATUS</var></code>; default="periodic"
+</dt>
+
+<dd>
+Whether the status of the query job should be reported periodically, every time the status changes, or not at all.
+</dd>
+
+
+<dt>
+<code>--structured</code>
+</dt>
+
+<dd>
+Preserve nested and repeated fields in the result schema. If not set, rows in the result are flattened.
+</dd>
+
+
+<dt>
+<code>--use-cache</code>
+</dt>
+
+<dd>
+Use the query cache to avoid rerunning cached queries.
+</dd>
+
+
+<dt>
+<code>--write-to</code> <code><var>WRITE_TO</var></code>
+</dt>
+
+<dd>
+Name of a table to which query results will be written (replacing the old contents of the table, if any).
+</dd>
+
+</dl></dd>
+<section id="_global_flags">
+<dt>GLOBAL FLAGS</dt>
+<dd><dl>
+<dt>
+<code>--fingerprint-job-id</code>
+</dt>
+
+<dd>
+Whether to use a job id that is derived from a fingerprint of the job configuration.
+</dd>
+
+
+<dt>
+<code>--format</code> <code><var>FORMAT</var></code>
+</dt>
+
+<dd>
+Specify a format for printed output. By default, a command-specific
+human-friendly output format is used. Setting this flag to one of
+the available options will serialize the result of the command in
+the chosen format and print it to stdout. Supported formats are:
+<code>json</code>, <code>text</code>, <code>yaml</code>.
+</dd>
+
+
+<dt>
+<code>--help</code>
+</dt>
+
+<dd>
+Display detailed help.
+</dd>
+
+
+<dt>
+<code>--log-http</code>
+</dt>
+
+<dd>
+Logs all HTTP server requests and responses to stderr.
+</dd>
+
+
+<dt>
+<code>--project</code> <code><var>PROJECT_ID</var></code>
+</dt>
+
+<dd>
+The Google Cloud Platform project name to use for this invocation. If
+omitted then the current project is assumed.
+</dd>
+
+
+<dt>
+<code>--quiet</code>, <code>-q</code>
+</dt>
+
+<dd>
+Disable all interactive prompts when running gcloud commands. If input
+is required, defaults will be used, or an error will be raised.
+</dd>
+
+
+<dt>
+<code>--trace-token</code> <code><var>TRACE_TOKEN</var></code>
+</dt>
+
+<dd>
+Token used to route traces of service requests for investigation of issues.
+</dd>
+
+
+<dt>
+<code>-h</code>
+</dt>
+
+<dd>
+Print a summary help and exit.
+</dd>
+
+</dl></dd>
+</section>
+</section><section>
+<dt>NOTES</dt>
+<dd>This command is in the Google Cloud SDK <code>bigquery</code> component. See
+<a href="/sdk/gcloud/#gcloud.components">installing components</a>
+if it is not installed.</dd>
+<dd>This command is currently in ALPHA and may change without notice.</dd>
+</section>
+</dl></body>
+</html>
+

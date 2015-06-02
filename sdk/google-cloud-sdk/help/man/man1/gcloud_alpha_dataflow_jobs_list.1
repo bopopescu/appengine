@@ -1,0 +1,83 @@
+.TH "GCLOUD ALPHA DATAFLOW JOBS LIST" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_alpha_dataflow_jobs_list \- *(ALPHA)* Lists all jobs in a particular project
+.SH "SYNOPSIS"
+.sp
+gcloud alpha dataflow jobs list [\fIJOB\fR \&...] [\fB\-\-created\-after\fR \fICREATED_AFTER\fR] [\fB\-\-created\-before\fR \fICREATED_BEFORE\fR] [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-job\-name\fR \fIJOB_NAME\fR] [\fB\-\-log\-http\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-status\fR \fISTATUS\fR] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+\fB(ALPHA)\fR By default, jobs in the current project are listed; this can be overridden with the gcloud \-\-project flag\&.
+.SH "POSITIONAL ARGUMENTS"
+.HP
+[\fIJOB\fR \&...]
+.RE
+.SH "FLAGS"
+.PP
+\fB\-\-created\-after\fR \fICREATED_AFTER\fR
+.RS 4
+Filter the jobs to those created after the given time
+.RE
+.PP
+\fB\-\-created\-before\fR \fICREATED_BEFORE\fR
+.RS 4
+Filter the jobs to those created before the given time
+.RE
+.PP
+\fB\-\-job\-name\fR \fIJOB_NAME\fR
+.RS 4
+Filter the jobs to those with the given name\&.
+.RE
+.PP
+\fB\-\-status\fR \fISTATUS\fR
+.RS 4
+Filter the jobs to those with the selected status
+.RE
+.SS "GLOBAL FLAGS"
+.PP
+\fB\-\-format\fR \fIFORMAT\fR
+.RS 4
+Specify a format for printed output\&. By default, a command\-specific human\-friendly output format is used\&. Setting this flag to one of the available options will serialize the result of the command in the chosen format and print it to stdout\&. Supported formats are:
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBgcloud\fR component\&. See installing components if it is not installed\&.
+.sp
+This command is currently in ALPHA and may change without notice\&.

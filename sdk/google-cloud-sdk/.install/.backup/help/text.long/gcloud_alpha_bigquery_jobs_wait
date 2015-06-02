@@ -1,0 +1,93 @@
+NAME
+
+      gcloud alpha bigquery jobs wait - (ALPHA) Waits up to a specified number
+         of seconds for a specified job to finish
+
+SYNOPSIS
+
+      gcloud alpha bigquery jobs wait JOB_ID [--changed-status-only]
+      [--fingerprint-job-id] [--format FORMAT] [--help] [--ignore-error]
+      [--log-http] [--max-wait MAX_WAIT] [--project PROJECT_ID] [--quiet, -q]
+      [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (ALPHA) Waits up to a specified number of seconds for a specified job to
+      finish.
+
+POSITIONAL ARGUMENTS
+
+      JOB_ID
+
+         The job ID of the specified job. If this argument is omitted and there
+         is exactly one running job, that job is used. It is an error if the
+         argument is omitted and there is not exactly one running job.
+
+FLAGS
+
+      --changed-status-only
+
+         When reporting the progress of the job being waited for, display only
+         changes in status rather than reporting current status periodically.
+
+      --ignore-error
+
+         Do not exit the command with an error if the job finishes in an error
+         state. (The default behavior is to exit with an error if the job
+         finishes in an error state.)
+
+      --max-wait MAX_WAIT
+
+         The number of seconds after which execution of this command terminates
+         even if the specified job has not finished. If not specified, this
+         command waits until the specified job finishes.
+
+GLOBAL FLAGS
+
+      --fingerprint-job-id
+
+         Whether to use a job id that is derived from a fingerprint of the job
+         configuration.
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+NOTES
+
+      This command is in the Google Cloud SDK bigquery component. See installing
+      components if it is not installed.
+
+      This command is currently in ALPHA and may change without notice.
+

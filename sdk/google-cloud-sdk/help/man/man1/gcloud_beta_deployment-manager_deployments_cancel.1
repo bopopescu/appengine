@@ -1,0 +1,94 @@
+.TH "GCLOUD BETA DEPLOYMENT-MANAGER DEPLOYMENTS CANCEL" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_beta_deployment-manager_deployments_cancel \- *(BETA)* Cancel a pending or running deployment preview, update or creation
+.SH "SYNOPSIS"
+.sp
+gcloud beta deployment\-manager deployments cancel \fIDEPLOYMENT_NAME\fR [\fB\-\-async\fR] [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-log\-http\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+\fB(BETA)\fR This command will cancel a currently running or pending operation on a deployment\&.
+.SH "POSITIONAL ARGUMENTS"
+.HP
+\fIDEPLOYMENT_NAME\fR
+.RE
+.SH "FLAGS"
+.PP
+\fB\-\-async\fR
+.RS 4
+Return immediately and print information about the Operation in progress rather than waiting for the Operation to complete\&. (default=False)
+.RE
+.SS "GLOBAL FLAGS"
+.PP
+\fB\-\-format\fR \fIFORMAT\fR
+.RS 4
+Specify a format for printed output\&. By default, a command\-specific human\-friendly output format is used\&. Setting this flag to one of the available options will serialize the result of the command in the chosen format and print it to stdout\&. Supported formats are:
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "EXAMPLES"
+.sp
+To cancel a running operation on a deployment, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud beta deployment\-manager deployments cancel my\-deployment
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To issue a cancel command without waiting for the operation to complete, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud beta deployment\-manager deployments cancel my\-deployment \e
+    \-\-async
+.fi
+.if n \{\
+.RE
+.\}
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBgcloud\fR component\&. See installing components if it is not installed\&.
+.sp
+This command is currently in BETA and may change without notice\&.

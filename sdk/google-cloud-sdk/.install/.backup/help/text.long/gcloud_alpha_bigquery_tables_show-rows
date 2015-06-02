@@ -1,0 +1,81 @@
+NAME
+
+      gcloud alpha bigquery tables show-rows - (ALPHA) Displays selected rows in
+         a specified table
+
+SYNOPSIS
+
+      gcloud alpha bigquery tables show-rows TABLE [--fingerprint-job-id]
+      [--format FORMAT] [--help] [--limit LIMIT; default="100"] [--log-http]
+      [--project PROJECT_ID] [--quiet, -q] [--start-row START_ROW]
+      [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (ALPHA) (This command does not apply to views.)
+
+POSITIONAL ARGUMENTS
+
+      TABLE
+
+         The table whose rows are to be shown.
+
+FLAGS
+
+      --limit LIMIT; default="100"
+
+         The maximum number of rows to display.
+
+      --start-row START_ROW
+
+         The number of rows to skip before showing table data.
+
+GLOBAL FLAGS
+
+      --fingerprint-job-id
+
+         Whether to use a job id that is derived from a fingerprint of the job
+         configuration.
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+NOTES
+
+      This command is in the Google Cloud SDK bigquery component. See installing
+      components if it is not installed.
+
+      This command is currently in ALPHA and may change without notice.
+

@@ -1,0 +1,70 @@
+NAME
+
+      gcloud dns project-info describe - view Cloud DNS related information for
+         a project
+
+SYNOPSIS
+
+      gcloud dns project-info describe PROJECT_ID [--format FORMAT] [--help]
+      [--log-http] [--project PROJECT_ID] [--quiet, -q]
+      [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      This command displays Cloud DNS related information for your project
+      including quotas for various resources and operations.
+
+POSITIONAL ARGUMENTS
+
+      PROJECT_ID
+
+         The identifier for the project you want DNS related info for.
+
+FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+EXAMPLES
+
+      To display Cloud DNS related information for your project, run:
+
+        $ gcloud dns project-info describe my_project_id
+
+NOTES
+
+      This command is in the Google Cloud SDK dns component. See installing
+      components if it is not installed.
+

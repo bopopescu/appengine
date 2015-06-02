@@ -1,0 +1,75 @@
+.TH "GCLOUD DNS PROJECT-INFO" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_dns_project-info \- view Cloud DNS related information for a project
+.SH "SYNOPSIS"
+.sp
+gcloud dns project\-info \fICOMMAND\fR [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-log\-http\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+View Cloud DNS related information for a project\&.
+.SH "FLAGS"
+.HP
+\fB\-\-format\fR \fIFORMAT\fR
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "COMMANDS"
+.sp
+\fICOMMAND\fR is one of the following:
+.PP
+\fBdescribe\fR
+.RS 4
+View Cloud DNS related information for a project\&.
+.RE
+.SH "EXAMPLES"
+.sp
+To display Cloud DNS related information for your project, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud dns project\-info describe
+.fi
+.if n \{\
+.RE
+.\}
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBdns\fR component\&. See installing components if it is not installed\&.

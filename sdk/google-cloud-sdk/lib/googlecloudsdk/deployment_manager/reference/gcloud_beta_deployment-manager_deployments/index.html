@@ -1,0 +1,180 @@
+<html devsite="">
+<head>
+<title>gcloud beta deployment-manager deployments</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="project_path" value="/sdk/_project.yaml">
+<meta name="book_path" value="/sdk/_book.yaml">
+<!--
+        THIS DOC IS GENERATED.  DO NOT EDIT.
+        -->
+<style>
+  dd { margin-bottom: 1ex; }
+  .hangingindent { padding-left: 1.5em; text-indent: -1.5em; }
+</style>
+</head>
+<body><dl>
+<section>
+<dt>NAME</dt>
+<dd>gcloud beta deployment-manager deployments - <code>(BETA)</code> Commands for Deployment Manager V2 deployments</dd>
+</section><section>
+<dt>SYNOPSIS</dt>
+<dd><pre>gcloud beta deployment-manager deployments COMMAND [--format FORMAT] [--help] [--log-http] [--project PROJECT_ID] [--quiet, -q] [--trace-token TRACE_TOKEN] [-h]</pre></dd>
+</section><section>
+<dt>DESCRIPTION</dt>
+<dd>
+<code>(BETA)</code> Commands to create, update, delete, and examine deployments of resources.</dd>
+</section><section>
+<dt>FLAGS</dt>
+<dd><dl>
+<dt class="hangingindent">
+<code>--format</code>&nbsp;&nbsp;&#32;<code><var>FORMAT</var></code>
+</dt>
+
+<dd>
+Specify a format for printed output. By default, a command-specific
+human-friendly output format is used. Setting this flag to one of
+the available options will serialize the result of the command in
+the chosen format and print it to stdout. Supported formats are:
+<code>json</code>, <code>text</code>, <code>yaml</code>.
+</dd>
+
+
+<dt>
+<code>--help</code>
+</dt>
+
+<dd>
+Display detailed help.
+</dd>
+
+
+<dt>
+<code>--log-http</code>
+</dt>
+
+<dd>
+Logs all HTTP server requests and responses to stderr.
+</dd>
+
+
+<dt>
+<code>--project</code> <code><var>PROJECT_ID</var></code>
+</dt>
+
+<dd>
+The Google Cloud Platform project name to use for this invocation. If
+omitted then the current project is assumed.
+</dd>
+
+
+<dt>
+<code>--quiet</code>, <code>-q</code>
+</dt>
+
+<dd>
+Disable all interactive prompts when running gcloud commands. If input
+is required, defaults will be used, or an error will be raised.
+</dd>
+
+
+<dt>
+<code>--trace-token</code> <code><var>TRACE_TOKEN</var></code>
+</dt>
+
+<dd>
+Token used to route traces of service requests for investigation of issues.
+</dd>
+
+
+<dt>
+<code>-h</code>
+</dt>
+
+<dd>
+Print a summary help and exit.
+</dd>
+
+</dl></dd>
+</section><section>
+<dt>COMMANDS</dt>
+<dd>
+<code><var>COMMAND</var></code> is one of the following:</dd>
+<dd><dl>
+<dt>
+<code><a href="cancel">cancel</a></code>
+</dt>
+
+<dd>
+<code>(BETA)</code> Cancel a pending or running deployment preview, update or creation.
+</dd>
+
+
+<dt>
+<code><a href="create">create</a></code>
+</dt>
+
+<dd>
+<code>(BETA)</code> Create a deployment.
+</dd>
+
+
+<dt>
+<code><a href="delete">delete</a></code>
+</dt>
+
+<dd>
+<code>(BETA)</code> Delete a deployment.
+</dd>
+
+
+<dt>
+<code><a href="describe">describe</a></code>
+</dt>
+
+<dd>
+<code>(BETA)</code> Provide information about a deployment.
+</dd>
+
+
+<dt>
+<code><a href="list">list</a></code>
+</dt>
+
+<dd>
+<code>(BETA)</code> List deployments in a project.
+</dd>
+
+
+<dt>
+<code><a href="update">update</a></code>
+</dt>
+
+<dd>
+<code>(BETA)</code> Update a deployment based on a provided config file.
+</dd>
+
+</dl></dd>
+</section><section>
+<dt>EXAMPLES</dt>
+<dd>To create a deployment, run:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/create">gcloud beta deployment-manager deployments create</A> my-deployment \
+    --config config.yaml</pre></dd>
+<dd>To update a deployment, run:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/update">gcloud beta deployment-manager deployments update</A> my-deployment \
+    --config new_config.yaml</pre></dd>
+<dd>To delete a deployment, run:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/delete">gcloud beta deployment-manager deployments delete</A> my-deployment</pre></dd>
+<dd>To view the details of a deployment, run:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/describe">gcloud beta deployment-manager deployments describe</A> my-deployment</pre></dd>
+<dd>To see the list of all deployments, run:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/list">gcloud beta deployment-manager deployments list</A></pre></dd>
+</section><section>
+<dt>NOTES</dt>
+<dd>This command is in the Google Cloud SDK <code>gcloud</code> component. See
+<a href="/sdk/gcloud/#gcloud.components">installing components</a>
+if it is not installed.</dd>
+<dd>This command is currently in BETA and may change without notice.</dd>
+</section>
+</dl></body>
+</html>
+

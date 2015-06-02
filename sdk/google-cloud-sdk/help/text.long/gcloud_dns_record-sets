@@ -1,0 +1,114 @@
+NAME
+
+      gcloud dns record-sets - manage the record-sets within your managed-zones
+
+SYNOPSIS
+
+      gcloud dns record-sets GROUP | COMMAND [--format FORMAT] [--help]
+      [--log-http] [--project PROJECT_ID] [--quiet, -q]
+      [--trace-token TRACE_TOKEN] [--zone ZONE, -z ZONE] [-h]
+
+DESCRIPTION
+
+      Manage the record-sets within your managed-zones.
+
+FLAGS
+
+      --zone ZONE, -z ZONE
+
+         Name of the managed-zone whose record-sets you want to manage.
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+GROUPS
+
+      GROUP is one of the following:
+
+      changes
+
+         View details about changes to your Cloud DNS record-sets.
+
+      transaction
+
+         Make scriptable and transactional changes to your record-sets.
+
+COMMANDS
+
+      COMMAND is one of the following:
+
+      export
+
+         Export your record-sets into a file.
+
+      import
+
+         Import record-sets into your managed-zone.
+
+      list
+
+         View the list of record-sets in a managed-zone.
+
+EXAMPLES
+
+      To import record-sets from a BIND zone file, run:
+
+        $ gcloud dns record-sets -z MANAGED_ZONE import \
+            --zone-file-format ZONE_FILE
+
+      To export record-sets in yaml format, run:
+
+        $ gcloud dns record-sets -z MANAGED_ZONE export
+
+      To see how to make scriptable changes to your record-sets through
+      transactions, run:
+
+        $ gcloud dns record-sets -z MANAGED_ZONE transaction
+
+      To see change details or list of all changes, run:
+
+        $ gcloud dns record-sets -z MANAGED_ZONE changes
+
+      To see the list of all record-sets, run:
+
+        $ gcloud dns record-sets -z MANAGED_ZONE list
+
+NOTES
+
+      This command is in the Google Cloud SDK dns component. See installing
+      components if it is not installed.
+

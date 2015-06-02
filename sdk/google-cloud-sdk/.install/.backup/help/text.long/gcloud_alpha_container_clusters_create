@@ -1,0 +1,170 @@
+NAME
+
+      gcloud alpha container clusters create - (ALPHA) Create a cluster for
+         running containers
+
+SYNOPSIS
+
+      gcloud alpha container clusters create NAME
+      [--cluster-api-version CLUSTER_API_VERSION]
+      [--container-ipv4-cidr CONTAINER_IPV4_CIDR] [--format FORMAT] [--help]
+      [--log-http] [--machine-type MACHINE_TYPE, -m MACHINE_TYPE]
+      [--network NETWORK] [--no-enable-cloud-logging] [--no-wait]
+      [--num-nodes NUM_NODES; default="3"] [--password PASSWORD]
+      [--project PROJECT_ID] [--quiet, -q]
+      [--scopes [ACCOUNT=]SCOPE,[[ACCOUNT=]SCOPE,...]]
+      [--source-image SOURCE_IMAGE] [--trace-token TRACE_TOKEN]
+      [--user USER, -u USER; default="admin"] [--zone ZONE, -z ZONE] [-h]
+
+DESCRIPTION
+
+      (ALPHA) Create a cluster for running containers.
+
+POSITIONAL ARGUMENTS
+
+      NAME
+
+         The name of this cluster.
+
+FLAGS
+
+      --cluster-api-version CLUSTER_API_VERSION
+
+         The kubernetes release version to launch the cluster with. Defaults to
+         server-specified.
+
+      --container-ipv4-cidr CONTAINER_IPV4_CIDR
+
+         The IP addresses of the container pods in this cluster in CIDR notation
+         (e.g. 10.0.0.0/14). Defaults to server-specified
+
+      --machine-type MACHINE_TYPE, -m MACHINE_TYPE
+
+         The type of machine to use for workers. Defaults to server-specified
+
+      --network NETWORK
+
+         The Compute Engine Network that the cluster will connect to. Google
+         Container Engine will use this network when creating routes and
+         firewalls for the clusters. Defaults to the 'default' network.
+
+      --no-enable-cloud-logging
+
+         Don't automatically send logs from the cluster to the Google Cloud
+         Logging API.
+
+      --no-wait
+
+         Return after issuing create request without polling the operation for
+         completion.
+
+      --num-nodes NUM_NODES; default="3"
+
+         The number of nodes in the cluster.
+
+      --password PASSWORD
+
+         The password to use for cluster auth. Defaults to a randomly-generated
+         string.
+
+      --scopes [ACCOUNT=]SCOPE,[[ACCOUNT=]SCOPE,...]
+
+         Specifies service accounts and scopes for the node instances. Service
+         accounts generate access tokens that can be accessed through each
+         instance's metadata server and used to authenticate applications on the
+         instance. The account can be either an email address or an alias
+         corresponding to a service account. If account is omitted, the
+         project's default service account is used. The default service account
+         can be specified explicitly using the alias default. Examples:
+
+           $ gcloud alpha container clusters create example-cluster \
+               --scopes bigquery,me@project.gserviceaccount.com=storage-rw
+           $ gcloud alpha container clusters create example-cluster \
+               --scopes bigquery storage-rw compute-ro
+
+         Multiple [ACCOUNT=]SCOPE pairs can specified, separated by commas. The
+         scopes specified will be added onto the scopes necessary for the
+         cluster to function properly, which are always put in the default
+         service account.
+
+         SCOPE can be either the full URI of the scope or an alias. Available
+         aliases are:
+
+         Alias,URI bigquery,https://www.googleapis.com/auth/bigquery
+
+                 cloud-platform,https://www.googleapis.com/auth/cloud-platform
+                 compute-ro,https://www.googleapis.com/auth/compute.readonly
+                 compute-rw,https://www.googleapis.com/auth/compute
+                
+         computeaccounts-ro,https://www.googleapis.com/auth/computeaccounts.readonly
+                
+         computeaccounts-rw,https://www.googleapis.com/auth/computeaccounts
+                 datastore,https://www.googleapis.com/auth/datastore
+                 logging-write,https://www.googleapis.com/auth/logging.write
+                 monitoring,https://www.googleapis.com/auth/monitoring
+                 sql,https://www.googleapis.com/auth/sqlservice
+                 sql-admin,https://www.googleapis.com/auth/sqlservice.admin
+                
+         storage-full,https://www.googleapis.com/auth/devstorage.full_control
+                 storage-ro,https://www.googleapis.com/auth/devstorage.read_only
+                
+         storage-rw,https://www.googleapis.com/auth/devstorage.read_write
+                 taskqueue,https://www.googleapis.com/auth/taskqueue
+                 userinfo-email,https://www.googleapis.com/auth/userinfo.email
+
+      --source-image SOURCE_IMAGE
+
+         The source image to use for workers. Defaults to server-specified
+
+      --user USER, -u USER; default="admin"
+
+         The user name to use for cluster auth.
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      --zone ZONE, -z ZONE
+
+         The compute zone (e.g. us-central1-a) for the cluster
+
+      -h
+
+         Print a summary help and exit.
+
+NOTES
+
+      This command is in the Google Cloud SDK gcloud component. See installing
+      components if it is not installed.
+
+      This command is currently in ALPHA and may change without notice.
+

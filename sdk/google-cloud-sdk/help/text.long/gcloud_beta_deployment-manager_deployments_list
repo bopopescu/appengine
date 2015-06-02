@@ -1,0 +1,82 @@
+NAME
+
+      gcloud beta deployment-manager deployments list - (BETA) List deployments
+         in a project
+
+SYNOPSIS
+
+      gcloud beta deployment-manager deployments list [--format FORMAT] [--help]
+      [--limit LIMIT] [--log-http] [--project PROJECT_ID] [--quiet, -q]
+      [--simple-list] [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (BETA) Prints a table with summary information on all deployments in the
+      project.
+
+FLAGS
+
+      --limit LIMIT
+
+         The maximum number of results to list.
+
+      --simple-list
+
+         If true, only the list of resource IDs is printed. If false, prints a
+         human-readable table of resource information.
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+EXAMPLES
+
+      To print out a list of deployments with some summary information about
+      each, run:
+
+        $ gcloud beta deployment-manager deployments list
+
+      To print only the name of each deployment, run:
+
+        $ gcloud beta deployment-manager deployments list --simple-list
+
+NOTES
+
+      This command is in the Google Cloud SDK gcloud component. See installing
+      components if it is not installed.
+
+      This command is currently in BETA and may change without notice.
+

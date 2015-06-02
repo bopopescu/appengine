@@ -1,0 +1,104 @@
+.TH "GCLOUD BETA DEPLOYMENT-MANAGER OPERATIONS" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_beta_deployment-manager_operations \- *(BETA)* Commands for Deployment Manager V2 operations
+.SH "SYNOPSIS"
+.sp
+gcloud beta deployment\-manager operations \fICOMMAND\fR [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-log\-http\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+\fB(BETA)\fR Commands to list, examine, and wait for long\-running operations\&.
+.SH "FLAGS"
+.HP
+\fB\-\-format\fR \fIFORMAT\fR
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "COMMANDS"
+.sp
+\fICOMMAND\fR is one of the following:
+.PP
+\fBdescribe\fR
+.RS 4
+\fB(BETA)\fR
+Provide information about an operation\&.
+.RE
+.PP
+\fBlist\fR
+.RS 4
+\fB(BETA)\fR
+List operations in a project\&.
+.RE
+.PP
+\fBwait\fR
+.RS 4
+\fB(BETA)\fR
+Wait for all operations specified to complete before returning\&.
+.RE
+.SH "EXAMPLES"
+.sp
+To view the details of an operation, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud beta deployment\-manager operations describe operation\-name
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To see the list of all operations, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud beta deployment\-manager operations list
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To wait for an operation to complete, run: $ gcloud beta deployment\-manager operations wait operation\-name
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBgcloud\fR component\&. See installing components if it is not installed\&.
+.sp
+This command is currently in BETA and may change without notice\&.

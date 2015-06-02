@@ -1,0 +1,96 @@
+NAME
+
+      gcloud alpha container kubectl - call kubectl with arbitrary arguments
+
+SYNOPSIS
+
+      gcloud alpha container kubectl [--cluster CLUSTER, -n CLUSTER]
+      [--format FORMAT] [--help] [--log-http] [--project PROJECT_ID]
+      [--purge-config-cache] [--quiet, -q] [--trace-token TRACE_TOKEN]
+      [--zone ZONE, -z ZONE] [-h] [KUBECTL_ARGS ...]
+
+DESCRIPTION
+
+      Passes given arguments to kubectl along with arguments to set the cluster
+      context (overwriting yourself is not recommended). Requires the
+      compute/zone and container/cluster properties be defined. If they are
+      missing, the command will fail with an error message that describes how to
+      set the missing property.
+
+      WARNING: this command is deprecated! You can run kubectl directly after
+      calling
+
+      $ gcloud alpha container get-credentials
+
+      You can then use
+
+      $ kubectl config use-context gke_PROJECT_ZONE_CLUSTER
+
+      to switch between clusters.
+
+POSITIONAL ARGUMENTS
+
+      [KUBECTL_ARGS ...]
+
+         Arbitrary arguments to pass to kubectl
+
+FLAGS
+
+      --cluster CLUSTER, -n CLUSTER
+
+         The name of the cluster to issue commands to.
+
+      --purge-config-cache
+
+         Clear cached config data for the cluster. If set, will call 'container
+         clusters describe' directly to get cluster data before executing
+         kubernetes client command.
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      --zone ZONE, -z ZONE
+
+         The compute zone (e.g. us-central1-a) for the cluster
+
+      -h
+
+         Print a summary help and exit.
+
+NOTES
+
+      This command is in the Google Cloud SDK gcloud component. See installing
+      components if it is not installed.
+
+      This command is currently in ALPHA and may change without notice.
+

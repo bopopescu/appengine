@@ -1,0 +1,88 @@
+.TH "GCLOUD ALPHA BIGQUERY JOBS" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_alpha_bigquery_jobs \- *(ALPHA)* A group of subcommands for working with BigQuery jobs
+.SH "SYNOPSIS"
+.sp
+gcloud alpha bigquery jobs \fICOMMAND\fR [\fB\-\-fingerprint\-job\-id\fR] [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-log\-http\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+\fB(ALPHA)\fR A group of subcommands for working with BigQuery jobs\&.
+.SH "FLAGS"
+.HP
+\fB\-\-fingerprint\-job\-id\fR
+.RE
+.PP
+\fB\-\-format\fR \fIFORMAT\fR
+.RS 4
+Specify a format for printed output\&. By default, a command\-specific human\-friendly output format is used\&. Setting this flag to one of the available options will serialize the result of the command in the chosen format and print it to stdout\&. Supported formats are:
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "COMMANDS"
+.sp
+\fICOMMAND\fR is one of the following:
+.PP
+\fBdescribe\fR
+.RS 4
+\fB(ALPHA)\fR
+Shows information about a specified job\&.
+.RE
+.PP
+\fBlist\fR
+.RS 4
+\fB(ALPHA)\fR
+Lists all jobs in a particular project\&.
+.RE
+.PP
+\fBshow\-rows\fR
+.RS 4
+\fB(ALPHA)\fR
+Displays selected rows in the result of a query job\&.
+.RE
+.PP
+\fBwait\fR
+.RS 4
+\fB(ALPHA)\fR
+Waits up to a specified number of seconds for a specified job to finish\&.
+.RE
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBbigquery\fR component\&. See installing components if it is not installed\&.
+.sp
+This command is currently in ALPHA and may change without notice\&.

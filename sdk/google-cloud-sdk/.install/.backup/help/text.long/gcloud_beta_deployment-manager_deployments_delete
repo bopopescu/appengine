@@ -1,0 +1,96 @@
+NAME
+
+      gcloud beta deployment-manager deployments delete - (BETA) Delete a
+         deployment
+
+SYNOPSIS
+
+      gcloud beta deployment-manager deployments delete DEPLOYMENT_NAME
+      [DEPLOYMENT_NAME ...] [--async] [--format FORMAT] [--help] [--log-http]
+      [--project PROJECT_ID] [--quiet, -q] [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (BETA) This command deletes a deployment and deletes all associated
+      resources.
+
+POSITIONAL ARGUMENTS
+
+      DEPLOYMENT_NAME [DEPLOYMENT_NAME ...]
+
+         Deployment name.
+
+FLAGS
+
+      --async
+
+         Return immediately and print information about the Operation in
+         progress rather than waiting for the Operation to complete.
+         (default=False)
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+EXAMPLES
+
+      To delete a deployment, run:
+
+        $ gcloud beta deployment-manager deployments delete my-deployment
+
+      To issue a delete command without waiting for the operation to complete,
+      run:
+
+        $ gcloud beta deployment-manager deployments delete my-deployment \
+            --async
+
+      To delete several deployments, run:
+
+        $ gcloud beta deployment-manager deployments delete deployment-one \
+            deployment-two deployment-three
+
+      To disable the confirmation prompt on delete, run:
+
+        $ gcloud beta deployment-manager deployments delete my-deployment \
+            -q
+
+NOTES
+
+      This command is in the Google Cloud SDK gcloud component. See installing
+      components if it is not installed.
+
+      This command is currently in BETA and may change without notice.
+

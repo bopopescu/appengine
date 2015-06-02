@@ -1,0 +1,98 @@
+.TH "GCLOUD ALPHA BIGQUERY EXPORT" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_alpha_bigquery_export \- *(ALPHA)* Exports data from a specified source table to one or more destinations
+.SH "SYNOPSIS"
+.sp
+gcloud alpha bigquery export \fISOURCE_TABLE\fR \fIDESTINATION_URI\fR [\fIDESTINATION_URI\fR \&...] [\fB\-\-async\fR] [\fB\-\-destination\-format\fR \fIDESTINATION_FORMAT\fR] [\fB\-\-field\-delimiter\fR \fIFIELD_DELIMITER\fR; default=","] [\fB\-\-fingerprint\-job\-id\fR] [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-job\-id\fR \fIJOB_ID\fR] [\fB\-\-log\-http\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-status\fR \fISTATUS\fR; default="periodic"] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+\fB(ALPHA)\fR The data is exported in either CSV or newline\-delimited\-JSON format\&. Tables with nested or repeated fields cannot be exported in CSV format\&.
+.SH "POSITIONAL ARGUMENTS"
+.HP
+\fISOURCE_TABLE\fR
+.RE
+.PP
+\fIDESTINATION_URI\fR [\fIDESTINATION_URI\fR \&...]
+.RS 4
+A Google Storage URI specifying a file where the exported data is to be stored\&.
+.RE
+.SH "FLAGS"
+.PP
+\fB\-\-async\fR
+.RS 4
+Create an asynchronous job to perform the import\&.
+.RE
+.PP
+\fB\-\-destination\-format\fR \fIDESTINATION_FORMAT\fR
+.RS 4
+The format in which the exported data is to be written
+.RE
+.PP
+\fB\-\-field\-delimiter\fR \fIFIELD_DELIMITER\fR; default=","
+.RS 4
+The character that indicates the boundary between columns in CSV output\&. " " and "tab" are accepted names for tab\&.
+.RE
+.PP
+\fB\-\-job\-id\fR \fIJOB_ID\fR
+.RS 4
+A unique job_id to use for the request\&. If this flag is not specified, a job_id will be generated automatically and displayed as the result of the command\&.
+.RE
+.PP
+\fB\-\-status\fR \fISTATUS\fR; default="periodic"
+.RS 4
+Whether the status of the export job should be reported periodically, every time the status changes, or not at all\&.
+.RE
+.SS "GLOBAL FLAGS"
+.PP
+\fB\-\-fingerprint\-job\-id\fR
+.RS 4
+Whether to use a job id that is derived from a fingerprint of the job configuration\&.
+.RE
+.PP
+\fB\-\-format\fR \fIFORMAT\fR
+.RS 4
+Specify a format for printed output\&. By default, a command\-specific human\-friendly output format is used\&. Setting this flag to one of the available options will serialize the result of the command in the chosen format and print it to stdout\&. Supported formats are:
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBbigquery\fR component\&. See installing components if it is not installed\&.
+.sp
+This command is currently in ALPHA and may change without notice\&.

@@ -1,0 +1,201 @@
+.TH "GCLOUD ALPHA BIGQUERY IMPORT" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_alpha_bigquery_import \- *(ALPHA)* Import data from a specified source into a specified destination table
+.SH "SYNOPSIS"
+.sp
+gcloud alpha bigquery import \fISOURCE\fR \fIDESTINATION_TABLE\fR [\fB\-\-allow\-jagged\-rows\fR] [\fB\-\-allow\-quoted\-newlines\fR] [\fB\-\-async\fR] [\fB\-\-encoding\fR \fIENCODING\fR; default="utf\-8"] [\fB\-\-field\-delimiter\fR \fIFIELD_DELIMITER\fR; default=","] [\fB\-\-fingerprint\-job\-id\fR] [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-ignore\-unknown\-values\fR] [\fB\-\-job\-id\fR \fIJOB_ID\fR] [\fB\-\-log\-http\fR] [\fB\-\-max\-bad\-records\fR \fIMAX_BAD_RECORDS\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-quote\fR \fIQUOTE\fR; default="""] [\fB\-\-replace\fR] [\fB\-\-schema\fR \fISCHEMA\fR] [\fB\-\-schema\-file\fR \fISCHEMA_FILE\fR] [\fB\-\-skip\-leading\-rows\fR \fISKIP_LEADING_ROWS\fR] [\fB\-\-source\-format\fR \fISOURCE_FORMAT\fR] [\fB\-\-status\fR \fISTATUS\fR; default="periodic"] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+\fB(ALPHA)\fR If the table does not exist, it is created\&. Otherwise, the imported data is added to the table\&.
+.SH "POSITIONAL ARGUMENTS"
+.HP
+\fISOURCE\fR
+.RE
+.PP
+\fIDESTINATION_TABLE\fR
+.RS 4
+The fully\-qualified name of table into which data is to be imported\&.
+.RE
+.SH "FLAGS"
+.PP
+\fB\-\-allow\-jagged\-rows\fR
+.RS 4
+Allow missing trailing optional columns in CSV import data\&.
+.RE
+.PP
+\fB\-\-allow\-quoted\-newlines\fR
+.RS 4
+Allow quoted newlines in CSV import data\&.
+.RE
+.PP
+\fB\-\-async\fR
+.RS 4
+Create an asynchronous job to perform the import\&.
+.RE
+.PP
+\fB\-\-encoding\fR \fIENCODING\fR; default="utf\-8"
+.RS 4
+The character encoding used for the source data\&.
+.RE
+.PP
+\fB\-\-field\-delimiter\fR \fIFIELD_DELIMITER\fR; default=","
+.RS 4
+The character that indicates the boundary between columns in CSV source data\&. " " and "tab" are accepted names for tab\&.
+.RE
+.PP
+\fB\-\-ignore\-unknown\-values\fR
+.RS 4
+Allow and ignore extra, unrecognized values in CSV or JSON import data\&.
+.RE
+.PP
+\fB\-\-job\-id\fR \fIJOB_ID\fR
+.RS 4
+A unique job_id to use for the request\&. If this flag is not specified, a job_id will be generated automatically and displayed as the result of the command\&.
+.RE
+.PP
+\fB\-\-max\-bad\-records\fR \fIMAX_BAD_RECORDS\fR
+.RS 4
+Maximum number of bad records allowed before the entire job fails\&.
+.RE
+.PP
+\fB\-\-quote\fR \fIQUOTE\fR; default="""
+.RS 4
+Quote character to use to enclose records\&. Default is the double\-quote character (")\&. To indicate no quote character at all, use an empty string\&.
+.RE
+.PP
+\fB\-\-replace\fR
+.RS 4
+Erase existing contents before loading new data\&.
+.RE
+.PP
+\fB\-\-schema\fR \fISCHEMA\fR
+.RS 4
+A comma\-separated list of entries of the form name[:type], where type defaults to string if not present, specifying field names and types for the destination table\&. Possible types are string, integer, float, boolean, record, and timestamp\&.
+.RE
+.PP
+\fB\-\-schema\-file\fR \fISCHEMA_FILE\fR
+.RS 4
+The name of a JSON file containing a single array object, each element of which is an object with properties name, type, and, optionally, mode, specifying a schema for the destination table\&. Possible types are string, integer, float, boolean, record, and timestamp\&. Possible modes are NULLABLE, REQUIRED, and REPEATED\&.
+.RE
+.PP
+\fB\-\-skip\-leading\-rows\fR \fISKIP_LEADING_ROWS\fR
+.RS 4
+The number of rows at the beginning of the source data to skip\&.
+.RE
+.PP
+\fB\-\-source\-format\fR \fISOURCE_FORMAT\fR
+.RS 4
+Format of source data\&.
+.RE
+.PP
+\fB\-\-status\fR \fISTATUS\fR; default="periodic"
+.RS 4
+Whether the status of the import job should be reported periodically, every time the status changes, or not at all\&.
+.RE
+.SS "GLOBAL FLAGS"
+.PP
+\fB\-\-fingerprint\-job\-id\fR
+.RS 4
+Whether to use a job id that is derived from a fingerprint of the job configuration\&.
+.RE
+.PP
+\fB\-\-format\fR \fIFORMAT\fR
+.RS 4
+Specify a format for printed output\&. By default, a command\-specific human\-friendly output format is used\&. Setting this flag to one of the available options will serialize the result of the command in the chosen format and print it to stdout\&. Supported formats are:
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "EXAMPLES"
+.sp
+To import data from csv with given schema specified in json file, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud alpha bigquery import ds/new_tbl \&./info\&.csv \e
+    \-\-schema \&./info_schema\&.json
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To import data located on cloud storage, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud alpha bigquery import ds/new_tbl gs://mybucket/info\&.csv \e
+    \-\-schema\-file \&./info_schema\&.json
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To import data with command line specified schema, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud alpha bigquery import ds/small gs://mybucket/small\&.csv \e
+    \-\-schema name:integer,value:string
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To import data with default field string type, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud alpha bigquery import ds/small gs://mybucket/small\&.csv \e
+    \-\-schema field1,field2,field3
+.fi
+.if n \{\
+.RE
+.\}
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBbigquery\fR component\&. See installing components if it is not installed\&.
+.sp
+This command is currently in ALPHA and may change without notice\&.

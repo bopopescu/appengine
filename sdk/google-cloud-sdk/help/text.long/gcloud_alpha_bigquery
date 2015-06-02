@@ -1,0 +1,108 @@
+NAME
+
+      gcloud alpha bigquery - (ALPHA) A group of commands for using BigQuery
+
+SYNOPSIS
+
+      gcloud alpha bigquery GROUP | COMMAND [--fingerprint-job-id]
+      [--format FORMAT] [--help] [--log-http] [--project PROJECT_ID]
+      [--quiet, -q] [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (ALPHA) A group of commands for using BigQuery.
+
+FLAGS
+
+      --fingerprint-job-id
+
+         Whether to use a job id that is derived from a fingerprint of the job
+         configuration.
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+GROUPS
+
+      GROUP is one of the following:
+
+      datasets
+
+         (ALPHA) A group of subcommands for working with datasets.
+
+      jobs
+
+         (ALPHA) A group of subcommands for working with BigQuery jobs.
+
+      tables
+
+         (ALPHA) A group of subcommands for working with BigQuery tables.
+
+COMMANDS
+
+      COMMAND is one of the following:
+
+      copy
+
+         (ALPHA) Copy one table to another.
+
+      export
+
+         (ALPHA) Exports data from a specified source table to one or more
+         destinations.
+
+      import
+
+         (ALPHA) Import data from a specified source into a specified
+         destination table.
+
+      list-projects
+
+         (ALPHA) Lists all the user's projects for which the Big Query API is
+         enabled.
+
+      query
+
+         (ALPHA) Executes an SQL query.
+
+NOTES
+
+      This command is in the Google Cloud SDK bigquery component. See installing
+      components if it is not installed.
+
+      This command is currently in ALPHA and may change without notice.
+

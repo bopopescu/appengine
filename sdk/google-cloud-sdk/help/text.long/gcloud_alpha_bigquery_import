@@ -1,0 +1,181 @@
+NAME
+
+      gcloud alpha bigquery import - (ALPHA) Import data from a specified source
+         into a specified destination table
+
+SYNOPSIS
+
+      gcloud alpha bigquery import SOURCE DESTINATION_TABLE
+      [--allow-jagged-rows] [--allow-quoted-newlines] [--async]
+      [--encoding ENCODING; default="utf-8"]
+      [--field-delimiter FIELD_DELIMITER; default=","] [--fingerprint-job-id]
+      [--format FORMAT] [--help] [--ignore-unknown-values] [--job-id JOB_ID]
+      [--log-http] [--max-bad-records MAX_BAD_RECORDS] [--project PROJECT_ID]
+      [--quiet, -q] [--quote QUOTE; default="""] [--replace] [--schema SCHEMA]
+      [--schema-file SCHEMA_FILE] [--skip-leading-rows SKIP_LEADING_ROWS]
+      [--source-format SOURCE_FORMAT] [--status STATUS; default="periodic"]
+      [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (ALPHA) If the table does not exist, it is created. Otherwise, the
+      imported data is added to the table.
+
+POSITIONAL ARGUMENTS
+
+      SOURCE
+
+         Either a path to a single local file containing CSV or JSON data, or a
+         comma-separated list of URIs with the protocol gs:, specifying files in
+         Google Storage.
+
+      DESTINATION_TABLE
+
+         The fully-qualified name of table into which data is to be imported.
+
+FLAGS
+
+      --allow-jagged-rows
+
+         Allow missing trailing optional columns in CSV import data.
+
+      --allow-quoted-newlines
+
+         Allow quoted newlines in CSV import data.
+
+      --async
+
+         Create an asynchronous job to perform the import.
+
+      --encoding ENCODING; default="utf-8"
+
+         The character encoding used for the source data.
+
+      --field-delimiter FIELD_DELIMITER; default=","
+
+         The character that indicates the boundary between columns in CSV source
+         data. "	" and "tab" are accepted names for tab.
+
+      --ignore-unknown-values
+
+         Allow and ignore extra, unrecognized values in CSV or JSON import data.
+
+      --job-id JOB_ID
+
+         A unique job_id to use for the request. If this flag is not specified,
+         a job_id will be generated automatically and displayed as the result of
+         the command.
+
+      --max-bad-records MAX_BAD_RECORDS
+
+         Maximum number of bad records allowed before the entire job fails.
+
+      --quote QUOTE; default="""
+
+         Quote character to use to enclose records. Default is the double-quote
+         character ("). To indicate no quote character at all, use an empty
+         string.
+
+      --replace
+
+         Erase existing contents before loading new data.
+
+      --schema SCHEMA
+
+         A comma-separated list of entries of the form name[:type], where type
+         defaults to string if not present, specifying field names and types for
+         the destination table. Possible types are string, integer, float,
+         boolean, record, and timestamp.
+
+      --schema-file SCHEMA_FILE
+
+         The name of a JSON file containing a single array object, each element
+         of which is an object with properties name, type, and, optionally,
+         mode, specifying a schema for the destination table. Possible types are
+         string, integer, float, boolean, record, and timestamp. Possible modes
+         are NULLABLE, REQUIRED, and REPEATED.
+
+      --skip-leading-rows SKIP_LEADING_ROWS
+
+         The number of rows at the beginning of the source data to skip.
+
+      --source-format SOURCE_FORMAT
+
+         Format of source data.
+
+      --status STATUS; default="periodic"
+
+         Whether the status of the import job should be reported periodically,
+         every time the status changes, or not at all.
+
+GLOBAL FLAGS
+
+      --fingerprint-job-id
+
+         Whether to use a job id that is derived from a fingerprint of the job
+         configuration.
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+EXAMPLES
+
+      To import data from csv with given schema specified in json file, run:
+
+        $ gcloud alpha bigquery import ds/new_tbl ./info.csv \
+            --schema ./info_schema.json
+
+      To import data located on cloud storage, run:
+
+        $ gcloud alpha bigquery import ds/new_tbl gs://mybucket/info.csv \
+            --schema-file ./info_schema.json
+
+      To import data with command line specified schema, run:
+
+        $ gcloud alpha bigquery import ds/small gs://mybucket/small.csv \
+            --schema name:integer,value:string
+
+      To import data with default field string type, run:
+
+        $ gcloud alpha bigquery import ds/small gs://mybucket/small.csv \
+            --schema field1,field2,field3
+
+NOTES
+
+      This command is in the Google Cloud SDK bigquery component. See installing
+      components if it is not installed.
+
+      This command is currently in ALPHA and may change without notice.
+

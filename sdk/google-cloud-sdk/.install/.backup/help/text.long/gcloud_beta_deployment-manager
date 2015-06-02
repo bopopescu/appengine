@@ -1,0 +1,84 @@
+NAME
+
+      gcloud beta deployment-manager - (BETA) Manage Deployments of cloud
+         resources using version 2 beta of the API
+
+SYNOPSIS
+
+      gcloud beta deployment-manager GROUP [--format FORMAT] [--help]
+      [--log-http] [--project PROJECT_ID] [--quiet, -q]
+      [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (BETA) Manage Deployments of cloud resources using version 2 beta of the
+      API.
+
+FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+GROUPS
+
+      GROUP is one of the following:
+
+      deployments
+
+         (BETA) Commands for Deployment Manager V2 deployments.
+
+      manifests
+
+         (BETA) Commands for Deployment Manager V2 manifests.
+
+      operations
+
+         (BETA) Commands for Deployment Manager V2 operations.
+
+      resources
+
+         (BETA) Commands for Deployment Manager V2 resources.
+
+      types
+
+         (BETA) Commands for Deployment Manager V2 types.
+
+NOTES
+
+      This command is in the Google Cloud SDK gcloud component. See installing
+      components if it is not installed.
+
+      This command is currently in BETA and may change without notice.
+

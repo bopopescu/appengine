@@ -1,0 +1,173 @@
+.TH "GCLOUD DNS RECORD-SETS TRANSACTION" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_dns_record-sets_transaction \- make scriptable and transactional changes to your record\-sets
+.SH "SYNOPSIS"
+.sp
+gcloud dns record\-sets transaction \fICOMMAND\fR [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-log\-http\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-\-transaction\-file\fR \fITRANSACTION_FILE\fR; default="transaction\&.yaml"] [\fB\-\-zone\fR \fIZONE\fR, \fB\-z\fR \fIZONE\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+Make scriptable and transactional changes to your record\-sets\&.
+.SH "FLAGS"
+.HP
+\fB\-\-transaction\-file\fR \fITRANSACTION_FILE\fR; default="transaction\&.yaml"
+.RE
+.SS "GLOBAL FLAGS"
+.PP
+\fB\-\-format\fR \fIFORMAT\fR
+.RS 4
+Specify a format for printed output\&. By default, a command\-specific human\-friendly output format is used\&. Setting this flag to one of the available options will serialize the result of the command in the chosen format and print it to stdout\&. Supported formats are:
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-\-zone\fR \fIZONE\fR, \fB\-z\fR \fIZONE\fR
+.RS 4
+Name of the managed\-zone whose record\-sets you want to manage\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "COMMANDS"
+.sp
+\fICOMMAND\fR is one of the following:
+.PP
+\fBabort\fR
+.RS 4
+Abort transaction\&.
+.RE
+.PP
+\fBadd\fR
+.RS 4
+Append a record\-set addition to the transaction\&.
+.RE
+.PP
+\fBdescribe\fR
+.RS 4
+Describe the transaction\&.
+.RE
+.PP
+\fBexecute\fR
+.RS 4
+Execute the transaction on Cloud DNS\&.
+.RE
+.PP
+\fBremove\fR
+.RS 4
+Append a record\-set deletion to the transaction\&.
+.RE
+.PP
+\fBstart\fR
+.RS 4
+Start a transaction\&.
+.RE
+.SH "EXAMPLES"
+.sp
+To start a transaction, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud dns record\-sets transaction start
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To append a record\-set addition to the transaction, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud dns record\-sets transaction add \-\-name RECORD_SET_NAME \e
+    \-\-ttl TTL \-\-type TYPE DATA
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To append a record\-set removal to the transaction, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud dns record\-sets transaction remove \-\-name RECORD_SET_NAME \e
+    \-\-ttl TTL \-\-type TYPE DATA
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To look at the details of the transaction, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud dns record\-sets transaction describe
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To delete the transaction, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud dns record\-sets transaction abort
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+To execute the transaction, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud dns record\-sets transaction execute
+.fi
+.if n \{\
+.RE
+.\}
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBdns\fR component\&. See installing components if it is not installed\&.

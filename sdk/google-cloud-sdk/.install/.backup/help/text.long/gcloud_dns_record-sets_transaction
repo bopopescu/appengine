@@ -1,0 +1,125 @@
+NAME
+
+      gcloud dns record-sets transaction - make scriptable and transactional
+         changes to your record-sets
+
+SYNOPSIS
+
+      gcloud dns record-sets transaction COMMAND [--format FORMAT] [--help]
+      [--log-http] [--project PROJECT_ID] [--quiet, -q]
+      [--trace-token TRACE_TOKEN]
+      [--transaction-file TRANSACTION_FILE; default="transaction.yaml"]
+      [--zone ZONE, -z ZONE] [-h]
+
+DESCRIPTION
+
+      Make scriptable and transactional changes to your record-sets.
+
+FLAGS
+
+      --transaction-file TRANSACTION_FILE; default="transaction.yaml"
+
+         Path of the file which contains the transaction.
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      --zone ZONE, -z ZONE
+
+         Name of the managed-zone whose record-sets you want to manage.
+
+      -h
+
+         Print a summary help and exit.
+
+COMMANDS
+
+      COMMAND is one of the following:
+
+      abort
+
+         Abort transaction.
+
+      add
+
+         Append a record-set addition to the transaction.
+
+      describe
+
+         Describe the transaction.
+
+      execute
+
+         Execute the transaction on Cloud DNS.
+
+      remove
+
+         Append a record-set deletion to the transaction.
+
+      start
+
+         Start a transaction.
+
+EXAMPLES
+
+      To start a transaction, run:
+
+        $ gcloud dns record-sets transaction start
+
+      To append a record-set addition to the transaction, run:
+
+        $ gcloud dns record-sets transaction add --name RECORD_SET_NAME \
+            --ttl TTL --type TYPE DATA
+
+      To append a record-set removal to the transaction, run:
+
+        $ gcloud dns record-sets transaction remove --name RECORD_SET_NAME \
+            --ttl TTL --type TYPE DATA
+
+      To look at the details of the transaction, run:
+
+        $ gcloud dns record-sets transaction describe
+
+      To delete the transaction, run:
+
+        $ gcloud dns record-sets transaction abort
+
+      To execute the transaction, run:
+
+        $ gcloud dns record-sets transaction execute
+
+NOTES
+
+      This command is in the Google Cloud SDK dns component. See installing
+      components if it is not installed.
+

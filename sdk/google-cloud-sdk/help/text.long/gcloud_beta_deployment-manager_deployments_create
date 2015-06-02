@@ -1,0 +1,103 @@
+NAME
+
+      gcloud beta deployment-manager deployments create - (BETA) Create a
+         deployment
+
+SYNOPSIS
+
+      gcloud beta deployment-manager deployments create DEPLOYMENT_NAME
+      [--async] --config CONFIG [--description DESCRIPTION] [--format FORMAT]
+      [--help] [--log-http] [--preview] [--project PROJECT_ID] [--quiet, -q]
+      [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (BETA) This command inserts (creates) a new deployment based on a provided
+      config file.
+
+POSITIONAL ARGUMENTS
+
+      DEPLOYMENT_NAME
+
+         Deployment name.
+
+FLAGS
+
+      --async
+
+         Return immediately and print information about the Operation in
+         progress rather than waiting for the Operation to complete.
+         (default=False)
+
+      --config CONFIG
+
+         Filename of config which specifies resources to deploy.
+
+      --description DESCRIPTION
+
+         Optional description of the deployment to insert.
+
+      --preview
+
+         Preview the requested create without actually instantiating the
+         underlying resources. (default=False)
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+EXAMPLES
+
+      To create a new deployment, run:
+
+        $ gcloud beta deployment-manager deployments create my-deployment \
+            --config config.yaml --description "My deployment"
+
+      To preview a deployment without actually creating resources, run:
+
+        $ gcloud beta deployment-manager deployments create \
+            my-new-deployment --config config.yaml --preview
+
+      To instantiate a deployment that has been previewed, issue an update
+      command for that deployment without specifying a config file.
+
+NOTES
+
+      This command is in the Google Cloud SDK gcloud component. See installing
+      components if it is not installed.
+
+      This command is currently in BETA and may change without notice.
+

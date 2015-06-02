@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>13F34</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>GoogleAppEngine-default</string>
+	<key>CFBundleExecutable</key>
+	<string>GoogleAppEngine-default</string>
+	<key>CFBundleGetInfoString</key>
+	<string>GoogleAppEngineLauncher 1.9.20.242, © 2005-2015 Google Inc.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.google.Matchbook.GoogleAppEngine-default</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>GoogleAppEngine-default</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.9.20</string>
+	<key>CFBundleSignature</key>
+	<string>DS10</string>
+	<key>CFBundleVersion</key>
+	<string>1.9.20.242</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>6A1052d</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>14A382</string>
+	<key>DTSDKName</key>
+	<string>macosx10.10</string>
+	<key>DTXcode</key>
+	<string>0610</string>
+	<key>DTXcodeBuild</key>
+	<string>6A1052d</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>GoogleAppEngineLauncher 1.9.20.242, © 2005-2015 Google Inc.</string>
+</dict>
+</plist>

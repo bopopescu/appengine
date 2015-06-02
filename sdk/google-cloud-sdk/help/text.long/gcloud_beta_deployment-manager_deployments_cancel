@@ -1,0 +1,86 @@
+NAME
+
+      gcloud beta deployment-manager deployments cancel - (BETA) Cancel a
+         pending or running deployment preview, update or creation
+
+SYNOPSIS
+
+      gcloud beta deployment-manager deployments cancel DEPLOYMENT_NAME
+      [--async] [--format FORMAT] [--help] [--log-http] [--project PROJECT_ID]
+      [--quiet, -q] [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (BETA) This command will cancel a currently running or pending operation
+      on a deployment.
+
+POSITIONAL ARGUMENTS
+
+      DEPLOYMENT_NAME
+
+         Deployment name.
+
+FLAGS
+
+      --async
+
+         Return immediately and print information about the Operation in
+         progress rather than waiting for the Operation to complete.
+         (default=False)
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+EXAMPLES
+
+      To cancel a running operation on a deployment, run:
+
+        $ gcloud beta deployment-manager deployments cancel my-deployment
+
+      To issue a cancel command without waiting for the operation to complete,
+      run:
+
+        $ gcloud beta deployment-manager deployments cancel my-deployment \
+            --async
+
+NOTES
+
+      This command is in the Google Cloud SDK gcloud component. See installing
+      components if it is not installed.
+
+      This command is currently in BETA and may change without notice.
+

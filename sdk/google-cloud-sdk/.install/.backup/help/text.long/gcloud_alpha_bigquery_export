@@ -1,0 +1,106 @@
+NAME
+
+      gcloud alpha bigquery export - (ALPHA) Exports data from a specified
+         source table to one or more destinations
+
+SYNOPSIS
+
+      gcloud alpha bigquery export SOURCE_TABLE DESTINATION_URI [DESTINATION_URI
+      ...] [--async] [--destination-format DESTINATION_FORMAT]
+      [--field-delimiter FIELD_DELIMITER; default=","] [--fingerprint-job-id]
+      [--format FORMAT] [--help] [--job-id JOB_ID] [--log-http]
+      [--project PROJECT_ID] [--quiet, -q] [--status STATUS; default="periodic"]
+      [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      (ALPHA) The data is exported in either CSV or newline-delimited-JSON
+      format. Tables with nested or repeated fields cannot be exported in CSV
+      format.
+
+POSITIONAL ARGUMENTS
+
+      SOURCE_TABLE
+
+         The table whose data is to be exported
+
+      DESTINATION_URI [DESTINATION_URI ...]
+
+         A Google Storage URI specifying a file where the exported data is to be
+         stored.
+
+FLAGS
+
+      --async
+
+         Create an asynchronous job to perform the import.
+
+      --destination-format DESTINATION_FORMAT
+
+         The format in which the exported data is to be written
+
+      --field-delimiter FIELD_DELIMITER; default=","
+
+         The character that indicates the boundary between columns in CSV
+         output. "	" and "tab" are accepted names for tab.
+
+      --job-id JOB_ID
+
+         A unique job_id to use for the request. If this flag is not specified,
+         a job_id will be generated automatically and displayed as the result of
+         the command.
+
+      --status STATUS; default="periodic"
+
+         Whether the status of the export job should be reported periodically,
+         every time the status changes, or not at all.
+
+GLOBAL FLAGS
+
+      --fingerprint-job-id
+
+         Whether to use a job id that is derived from a fingerprint of the job
+         configuration.
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+NOTES
+
+      This command is in the Google Cloud SDK bigquery component. See installing
+      components if it is not installed.
+
+      This command is currently in ALPHA and may change without notice.
+

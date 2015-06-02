@@ -1,0 +1,195 @@
+<html devsite="">
+<head>
+<title>gcloud beta deployment-manager deployments update</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="project_path" value="/sdk/_project.yaml">
+<meta name="book_path" value="/sdk/_book.yaml">
+<!--
+        THIS DOC IS GENERATED.  DO NOT EDIT.
+        -->
+<style>
+  dd { margin-bottom: 1ex; }
+  .hangingindent { padding-left: 1.5em; text-indent: -1.5em; }
+</style>
+</head>
+<body><dl>
+<section>
+<dt>NAME</dt>
+<dd>gcloud beta deployment-manager deployments update - <code>(BETA)</code> Update a deployment based on a provided config file</dd>
+</section><section>
+<dt>SYNOPSIS</dt>
+<dd><pre>gcloud beta deployment-manager deployments update DEPLOYMENT_NAME [--async] [--config CONFIG] [--create-policy CREATE_POLICY; default="CREATE_OR_ACQUIRE"] [--delete-policy DELETE_POLICY; default="DELETE"] [--format FORMAT] [--help] [--log-http] [--preview] [--project PROJECT_ID] [--quiet, -q] [--trace-token TRACE_TOKEN] [--update-policy UPDATE_POLICY; default="PATCH"] [-h]</pre></dd>
+</section><section>
+<dt>DESCRIPTION</dt>
+<dd>
+<code>(BETA)</code> This command will update a deployment with the new config file provided.
+Different policies for create, update, and delete policies can be specified.</dd>
+</section><section>
+<dt>POSITIONAL ARGUMENTS</dt>
+<dd><dl>
+<dt class="hangingindent">
+<code><var>DEPLOYMENT_NAME</var></code>
+</dt>
+
+<dd>
+Deployment name.
+</dd>
+
+</dl></dd>
+</section><section>
+<dt>FLAGS</dt>
+<dd><dl>
+<dt>
+<code>--async</code>
+</dt>
+
+<dd>
+Return immediately and print information about the Operation in progress rather than waiting for the Operation to complete. (default=False)
+</dd>
+
+
+<dt>
+<code>--config</code> <code><var>CONFIG</var></code>
+</dt>
+
+<dd>
+Filename of config which specifies resources to deploy. Required unless launching an already-previewed update to this deployment.
+</dd>
+
+
+<dt>
+<code>--create-policy</code> <code><var>CREATE_POLICY</var></code>; default="CREATE_OR_ACQUIRE"
+</dt>
+
+<dd>
+Create policy for resources that have changed in the update. Can be CREATE_OR_ACQUIRE (default) or ACQUIRE.
+</dd>
+
+
+<dt>
+<code>--delete-policy</code> <code><var>DELETE_POLICY</var></code>; default="DELETE"
+</dt>
+
+<dd>
+Delete policy for resources that have changed in the update. Can be DELETE (default) or ABANDON.
+</dd>
+
+
+<dt>
+<code>--preview</code>
+</dt>
+
+<dd>
+Preview the requested update without making any changes to theunderlying resources. (default=False)
+</dd>
+
+
+<dt>
+<code>--update-policy</code> <code><var>UPDATE_POLICY</var></code>; default="PATCH"
+</dt>
+
+<dd>
+Update policy for resources that have changed in the update. Can be PATCH (default) or UPDATE.
+</dd>
+
+</dl></dd>
+<section id="_global_flags">
+<dt>GLOBAL FLAGS</dt>
+<dd><dl>
+<dt>
+<code>--format</code> <code><var>FORMAT</var></code>
+</dt>
+
+<dd>
+Specify a format for printed output. By default, a command-specific
+human-friendly output format is used. Setting this flag to one of
+the available options will serialize the result of the command in
+the chosen format and print it to stdout. Supported formats are:
+<code>json</code>, <code>text</code>, <code>yaml</code>.
+</dd>
+
+
+<dt>
+<code>--help</code>
+</dt>
+
+<dd>
+Display detailed help.
+</dd>
+
+
+<dt>
+<code>--log-http</code>
+</dt>
+
+<dd>
+Logs all HTTP server requests and responses to stderr.
+</dd>
+
+
+<dt>
+<code>--project</code> <code><var>PROJECT_ID</var></code>
+</dt>
+
+<dd>
+The Google Cloud Platform project name to use for this invocation. If
+omitted then the current project is assumed.
+</dd>
+
+
+<dt>
+<code>--quiet</code>, <code>-q</code>
+</dt>
+
+<dd>
+Disable all interactive prompts when running gcloud commands. If input
+is required, defaults will be used, or an error will be raised.
+</dd>
+
+
+<dt>
+<code>--trace-token</code> <code><var>TRACE_TOKEN</var></code>
+</dt>
+
+<dd>
+Token used to route traces of service requests for investigation of issues.
+</dd>
+
+
+<dt>
+<code>-h</code>
+</dt>
+
+<dd>
+Print a summary help and exit.
+</dd>
+
+</dl></dd>
+</section>
+</section><section>
+<dt>EXAMPLES</dt>
+<dd>To update an existing deployment with a new config file, run:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/update">gcloud beta deployment-manager deployments update</A> my-deployment \
+    --config new_config.yaml</pre></dd>
+<dd>To preview an update to an existing deployment without actually modifying the resources, run:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/update">gcloud beta deployment-manager deployments update</A> my-deployment \
+    --config new_config.yaml --preview</pre></dd>
+<dd>To apply an update that has been previewed, provide the name of the previewed deployment, and no config file:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/update">gcloud beta deployment-manager deployments update</A> my-deployment</pre></dd>
+<dd>To specify different create, update, or delete policies, include any subset of the following flags;</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/update">gcloud beta deployment-manager deployments update</A> my-deployment \
+    --config new_config.yaml --create-policy ACQUIRE \
+    --update-policy UPDATE --delete-policy ABANDON</pre></dd>
+<dd>To perform an update without waiting for the operation to complete, run:</dd>
+<dd><pre>$ <A href="../../../beta/deployment-manager/deployments/update">gcloud beta deployment-manager deployments update</A> my-deployment \
+    --config new_config.yaml --async</pre></dd>
+</section><section>
+<dt>NOTES</dt>
+<dd>This command is in the Google Cloud SDK <code>gcloud</code> component. See
+<a href="/sdk/gcloud/#gcloud.components">installing components</a>
+if it is not installed.</dd>
+<dd>This command is currently in BETA and may change without notice.</dd>
+</section>
+</dl></body>
+</html>
+

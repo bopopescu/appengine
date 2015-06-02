@@ -1,0 +1,76 @@
+NAME
+
+      gcloud alpha projects list - list all active Projects
+
+SYNOPSIS
+
+      gcloud alpha projects list [--format FORMAT] [--help] [--limit LIMIT]
+      [--log-http] [--project PROJECT_ID] [--quiet, -q]
+      [--trace-token TRACE_TOKEN] [-h]
+
+DESCRIPTION
+
+      This commands lists all active Projects (ID and title), for the active
+      user's credentials, in alphabetical order by Project title. Projects which
+      have been deleted or are pending deletion will not be included.
+
+      You can specify the maximum number of Projects to list with the 'limit'
+      flag.
+
+FLAGS
+
+      --limit LIMIT
+
+         Maximum number of results.
+
+GLOBAL FLAGS
+
+      --format FORMAT
+
+         Specify a format for printed output. By default, a command-specific
+         human-friendly output format is used. Setting this flag to one of the
+         available options will serialize the result of the command in the
+         chosen format and print it to stdout. Supported formats are: json,
+         text, yaml.
+
+      --help
+
+         Display detailed help.
+
+      --log-http
+
+         Logs all HTTP server requests and responses to stderr.
+
+      --project PROJECT_ID
+
+         The Google Cloud Platform project name to use for this invocation. If
+         omitted then the current project is assumed.
+
+      --quiet, -q
+
+         Disable all interactive prompts when running gcloud commands. If input
+         is required, defaults will be used, or an error will be raised.
+
+      --trace-token TRACE_TOKEN
+
+         Token used to route traces of service requests for investigation of
+         issues.
+
+      -h
+
+         Print a summary help and exit.
+
+EXAMPLES
+
+      The following command will list a maximum of 5 Projects, out of all of the
+      active user's active Projects, sorted alphabetically by title.
+
+        $ gcloud projects list --limit=5
+
+NOTES
+
+      This command is in the Google Cloud SDK alpha component. See installing
+      components if it is not installed.
+
+      This command is currently in ALPHA and may change without notice.
+

@@ -1,0 +1,77 @@
+.TH "GCLOUD DNS RECORD-SETS TRANSACTION EXECUTE" "1" "" "" ""
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.nh
+.ad l
+.SH "NAME"
+.HP
+gcloud_dns_record-sets_transaction_execute \- execute the transaction on Cloud DNS
+.SH "SYNOPSIS"
+.sp
+gcloud dns record\-sets transaction execute [\fB\-\-format\fR \fIFORMAT\fR] [\fB\-\-help\fR] [\fB\-\-log\-http\fR] [\fB\-\-project\fR \fIPROJECT_ID\fR] [\fB\-\-quiet\fR, \fB\-q\fR] [\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR] [\fB\-\-transaction\-file\fR \fITRANSACTION_FILE\fR; default="transaction\&.yaml"] [\fB\-\-zone\fR \fIZONE\fR, \fB\-z\fR \fIZONE\fR] [\fB\-h\fR]
+.SH "DESCRIPTION"
+.sp
+This command executes the transaction on Cloud DNS\&. This will result in record\-sets being changed as specified in the transaction\&.
+.SH "FLAGS"
+.HP
+\fB\-\-format\fR \fIFORMAT\fR
+json,
+text,
+yaml\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Display detailed help\&.
+.RE
+.PP
+\fB\-\-log\-http\fR
+.RS 4
+Logs all HTTP server requests and responses to stderr\&.
+.RE
+.PP
+\fB\-\-project\fR \fIPROJECT_ID\fR
+.RS 4
+The Google Cloud Platform project name to use for this invocation\&. If omitted then the current project is assumed\&.
+.RE
+.PP
+\fB\-\-quiet\fR, \fB\-q\fR
+.RS 4
+Disable all interactive prompts when running gcloud commands\&. If input is required, defaults will be used, or an error will be raised\&.
+.RE
+.PP
+\fB\-\-trace\-token\fR \fITRACE_TOKEN\fR
+.RS 4
+Token used to route traces of service requests for investigation of issues\&.
+.RE
+.PP
+\fB\-\-transaction\-file\fR \fITRANSACTION_FILE\fR; default="transaction\&.yaml"
+.RS 4
+Path of the file which contains the transaction\&.
+.RE
+.PP
+\fB\-\-zone\fR \fIZONE\fR, \fB\-z\fR \fIZONE\fR
+.RS 4
+Name of the managed\-zone whose record\-sets you want to manage\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.SH "EXAMPLES"
+.sp
+To execute the transaction, run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud dns record\-sets transaction execute \-z MANAGED_ZONE
+.fi
+.if n \{\
+.RE
+.\}
+.SH "NOTES"
+.sp
+This command is in the Google Cloud SDK \fBdns\fR component\&. See installing components if it is not installed\&.
