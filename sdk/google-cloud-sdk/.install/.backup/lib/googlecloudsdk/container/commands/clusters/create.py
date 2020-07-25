@@ -147,7 +147,7 @@ Alias,URI
             name=cluster_ref.clusterId,
             numNodes=args.num_nodes,
             nodeConfig=node_config,
-            masterAuth=messages.MasterAuth(user=args.user,
+            mainAuth=messages.MainAuth(user=args.user,
                                            password=password),
             enableCloudLogging=args.enable_cloud_logging))
     if args.cluster_api_version:

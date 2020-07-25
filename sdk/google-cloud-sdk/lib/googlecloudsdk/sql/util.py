@@ -274,7 +274,7 @@ def ConstructInstanceFromArgs(sql_messages, args, original=None):
   instance_resource = sql_messages.DatabaseInstance(
       region=region,
       databaseVersion=database_version,
-      masterInstanceName=getattr(args, 'master_instance_name', None),
+      mainInstanceName=getattr(args, 'main_instance_name', None),
       settings=settings)
 
   return instance_resource

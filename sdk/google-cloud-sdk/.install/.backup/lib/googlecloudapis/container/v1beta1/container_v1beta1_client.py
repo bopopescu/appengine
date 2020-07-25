@@ -178,11 +178,11 @@ class ContainerV1beta1(base_api.BaseApiClient):
           }
 
     def Create(self, request, global_params=None):
-      """Creates a cluster, consisting of the specified number and type of Google Compute Engine instances, plus a Kubernetes master instance.
+      """Creates a cluster, consisting of the specified number and type of Google Compute Engine instances, plus a Kubernetes main instance.
 
 The cluster is created in the project's default network.
 
-A firewall is added that allows traffic into port 443 on the master, which enables HTTPS. A firewall and a route is added for each node to allow the containers on that node to communicate with all other instances in the cluster.
+A firewall is added that allows traffic into port 443 on the main, which enables HTTPS. A firewall and a route is added for each node to allow the containers on that node to communicate with all other instances in the cluster.
 
 Finally, an entry is added to the project's global metadata indicating which CIDR range is being used by the cluster.
 
@@ -197,7 +197,7 @@ Finally, an entry is added to the project's global metadata indicating which CID
           config, request, global_params=global_params)
 
     def Delete(self, request, global_params=None):
-      """Deletes the cluster, including the Kubernetes master and all worker nodes.
+      """Deletes the cluster, including the Kubernetes main and all worker nodes.
 
 Firewalls and routes that were configured at cluster creation are also deleted.
 

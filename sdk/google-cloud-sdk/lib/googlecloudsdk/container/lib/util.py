@@ -186,7 +186,7 @@ def DescribeCluster(cluster_ref, context):
       project=cluster_ref.projectId))
 
 
-KMASTER_NAME_FORMAT = 'k8s-{cluster_name}-master'
+KMASTER_NAME_FORMAT = 'k8s-{cluster_name}-main'
 # These are determined by the version of kubernetes the cluster is running.
 # This needs kept up to date when validating new cluster api versions.
 KMASTER_LEGACY_CERT_DIRECTORY = '/usr/share/nginx'
@@ -199,14 +199,14 @@ KMASTER_CERT_FILES = [KMASTER_CLIENT_KEY, KMASTER_CLIENT_CERT,
                       KMASTER_CERT_AUTHORITY]
 
 
-def GetKmasterCertDirectory(version):
-  """Returns the directory on the Kubernetes master where SSL certs are stored.
+def GetKmainCertDirectory(version):
+  """Returns the directory on the Kubernetes main where SSL certs are stored.
 
   Args:
     version: str, Kubernetes version (e.g. "0.4.4" or "0.5.2").
 
   Returns:
-    str, the path to SSL certs on the Kubernetes master.
+    str, the path to SSL certs on the Kubernetes main.
   """
   if IsLegacyVersion(version):
     return KMASTER_LEGACY_CERT_DIRECTORY
@@ -335,7 +335,7 @@ class ClusterConfig(object):
 
     certs = cls._FetchCertFiles(cluster, project_id, cli)
     if not certs:
-      log.warn('Failed to get cert files from master. Certificate checking '
+      log.warn('Failed to get cert files from main. Certificate checking '
                'will be disabled. Run a kubectl command with '
                '--purge-config-cache to try fetching certs again.')
 
@@ -346,11 +346,11 @@ class ClusterConfig(object):
         'server': 'https://' + cluster.endpoint,
         'has_certs': bool(certs),
     }
-    if cluster.masterAuth.bearerToken:
-      kwargs['token'] = cluster.masterAuth.bearerToken
+    if cluster.mainAuth.bearerToken:
+      kwargs['token'] = cluster.mainAuth.bearerToken
     else:
-      kwargs['username'] = cluster.masterAuth.user
-      kwargs['password'] = cluster.masterAuth.password
+      kwargs['username'] = cluster.mainAuth.user
+      kwargs['password'] = cluster.mainAuth.password
 
     c_config = cls(**kwargs)
     c_config.GenKubeconfig()
@@ -444,7 +444,7 @@ class ClusterConfig(object):
   def _FetchCertFiles(cls, cluster, project_id, cli):
     """Call into gcloud.compute.copy_files to copy certs from cluster.
 
-    Copies cert files from Kubernetes master into local config directory
+    Copies cert files from Kubernetes main into local config directory
     for the provided cluster.
 
     Args:
@@ -456,7 +456,7 @@ class ClusterConfig(object):
     """
     instance_name = KMASTER_NAME_FORMAT.format(cluster_name=cluster.name)
 
-    cert_dir = GetKmasterCertDirectory(cluster.clusterApiVersion)
+    cert_dir = GetKmainCertDirectory(cluster.clusterApiVersion)
     paths = [os.path.join(cert_dir, cert_file) for
              cert_file in KMASTER_CERT_FILES]
     # Put all the paths together in the same CLI argument so that SCP copies all
@@ -468,14 +468,14 @@ class ClusterConfig(object):
 
     config_dir = cls.GetConfigDir(cluster.name, cluster.zone, project_id)
     log.out.Print('Using gcloud compute copy-files to fetch ssl certs from '
-                  'cluster master...')
+                  'cluster main...')
     try:
       cli.Execute(['compute', 'copy-files', '--zone=' + cluster.zone,
                    remote_file_paths, config_dir])
       return True
     except exceptions.ToolException as error:
       log.error(
-          'Fetching ssl certs from cluster master failed:\n\n%s\n\n'
+          'Fetching ssl certs from cluster main failed:\n\n%s\n\n'
           'You can still interact with the cluster, but you may see a warning '
           'that certificate checking is disabled.',
           error)

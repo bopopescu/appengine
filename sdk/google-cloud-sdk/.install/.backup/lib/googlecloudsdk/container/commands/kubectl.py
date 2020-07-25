@@ -115,7 +115,7 @@ class Kubectl(base.Command):
     ]
     if not c_config.has_certs:
       log.warn('No certificate files found in %s. Certificate checking '
-               'disabled for calls to cluster master.', c_config.config_dir)
+               'disabled for calls to cluster main.', c_config.config_dir)
     args = ['kubectl'] + base_args + kubectl_args
     try:
       log.debug('Calling \'%s\'', repr(args))

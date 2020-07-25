@@ -18,7 +18,7 @@ class Cluster(messages.Message):
     StatusValueValuesEnum: [Output only] The current status of this cluster.
 
   Fields:
-    clusterApiVersion: The API version of the Kubernetes master and kubelets
+    clusterApiVersion: The API version of the Kubernetes main and kubelets
       running in this cluster. Leave blank to pick up the latest stable
       release, or specify a version of the form "x.y.z". The Google Container
       Engine release notes lists the currently supported versions. If an
@@ -36,10 +36,10 @@ class Cluster(messages.Message):
       applications running in the cluster as well as logs from the Kubernetes
       components themselves.
     endpoint: [Output only] The IP address of this cluster's Kubernetes
-      master. The endpoint can be accessed from the internet at
-      https://username:password@endpoint/.  See the masterAuth property of
+      main. The endpoint can be accessed from the internet at
+      https://username:password@endpoint/.  See the mainAuth property of
       this resource for username and password information.
-    masterAuth: The authentication information for accessing the master.
+    mainAuth: The authentication information for accessing the main.
     name: The name of this cluster. The name must be unique within this
       project and zone, and can be up to 40 characters with the following
       restrictions:   - Lowercase letters, numbers, and hyphens only. - Must
@@ -52,7 +52,7 @@ class Cluster(messages.Message):
       node for hosting containers.
     numNodes: The number of nodes to create in this cluster. You must ensure
       that your Compute Engine resource quota is sufficient for this number of
-      instances plus one (to include the master). You must also have available
+      instances plus one (to include the main). You must also have available
       firewall and routes quota.
     selfLink: [Output only] Server-defined URL for the resource.
     servicesIpv4Cidr: [Output only] The IP address range of the Kubernetes
@@ -85,7 +85,7 @@ class Cluster(messages.Message):
   description = messages.StringField(4)
   enableCloudLogging = messages.BooleanField(5)
   endpoint = messages.StringField(6)
-  masterAuth = messages.MessageField('MasterAuth', 7)
+  mainAuth = messages.MessageField('MainAuth', 7)
   name = messages.StringField(8)
   network = messages.StringField(9)
   nodeConfig = messages.MessageField('NodeConfig', 10)
@@ -256,20 +256,20 @@ class ListOperationsResponse(messages.Message):
   operations = messages.MessageField('Operation', 1, repeated=True)
 
 
-class MasterAuth(messages.Message):
-  """The authentication information for accessing the master. Authentication
+class MainAuth(messages.Message):
+  """The authentication information for accessing the main. Authentication
   is either done using HTTP basic authentication or using a bearer token.
 
   Fields:
-    bearerToken: The token used to authenticate API requests to the master.
+    bearerToken: The token used to authenticate API requests to the main.
       The token is to be included in an HTTP Authorization Header in all
-      requests to the master endpoint. The format of the header is:
+      requests to the main endpoint. The format of the header is:
       "Authorization: Bearer ".
     password: The password to use for HTTP basic authentication when accessing
-      the Kubernetes master endpoint. Because the master endpoint is open to
+      the Kubernetes main endpoint. Because the main endpoint is open to
       the internet, you should create a strong password.
     user: The username to use for HTTP basic authentication when accessing the
-      Kubernetes master endpoint.
+      Kubernetes main endpoint.
   """
 
   bearerToken = messages.StringField(1)
